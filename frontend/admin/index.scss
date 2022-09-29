@@ -1,0 +1,33 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200&family=Catamaran:wght@500&family=Cormorant:wght@600&family=Libre+Baskerville&family=Open+Sans:wght@400;500;700;800&family=Poppins:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+@media (max-width: 766px) {
+  .sideNavIcon {
+    font-size: 1rem;
+  }
+}
+
+.menu-conatiner::-webkit-scrollbar {
+  width: 5px;
+  background-color: #e5e1e1;
+}
+
+.menu-conatiner::-webkit-scrollbar-thumb {
+  background: #53B175;
+  border-radius: 10px!important;
+}
+
+
+body {
+  font-family: 'Arima Madurai', cursive;
+  font-family: 'Catamaran', sans-serif;
+  font-family: 'Cormorant', serif;
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+.list li::before {
+  content: "• ";
+  color: #53B175; /* or whatever color you prefer */
+
+}
