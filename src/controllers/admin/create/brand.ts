@@ -17,7 +17,7 @@ createRouter.post("/web/brand", authMiddleware(), validate([
         .bail().isString().isLength({max: 50})
         .withMessage("Name must be upto 50 characters long.")
         .custom(async (name) => {
-            if (name) {
+            if (name){
                 const brandExist = await Brand.findOne({where: {name}});
 
                 if (brandExist) {

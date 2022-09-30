@@ -2,23 +2,24 @@
 
 module.exports = {
     async up (queryInterface, Sequelize){
-        await queryInterface.createTable("ProductVariations", {
+        await queryInterface.createTable("Promotions", {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            image: {type: Sequelize.STRING},
+            promoType: {type: Sequelize.STRING},
             name: {type: Sequelize.STRING},
-            unit: {type: Sequelize.STRING},
-            marketPrice: {type: Sequelize.INTEGER},
-            sellingPrice: {type: Sequelize.INTEGER},
+            description: {type: Sequelize.TEXT},
             discountType: {type: Sequelize.STRING},
             discount: {type: Sequelize.INTEGER},
-            qty: {type: Sequelize.INTEGER},
-            productId: {type: Sequelize.INTEGER},
-            status: {type: Sequelize.BOOLEAN},
+            minOrderValue: {type: Sequelize.INTEGER},
+            noOfVouchers: {type: Sequelize.INTEGER},
+            redeemAllowedPerUser: {type: Sequelize.INTEGER},
+            validityStarts: {type: Sequelize.STRING},
+            validityEnds: {type: Sequelize.STRING},
+            categoryIds: {type: Sequelize.STRING},
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE
@@ -30,6 +31,6 @@ module.exports = {
         });
     },
     async down (queryInterface, Sequelize){
-        await queryInterface.dropTable("ProductVariations");
+        await queryInterface.dropTable("Promotions");
     }
 };
