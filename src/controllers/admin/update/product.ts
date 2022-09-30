@@ -32,14 +32,14 @@ const handler: RequestHandler = async (req, res) => {
     product.qty = qty;
     await product.save();
 
-    if (productDetail) {
+    if (productDetail){
         const product_detail = await ProductDetail.findByPk(productDetail.id);
         product_detail.key = productDetail.key;
         product_detail.value = productDetail.value;
         await product_detail.save();
     }
 
-    if (images) {
+    if (images){
         const photo = await uploadImage({
             image: images.image,
             directoryPath: "assets/uploads/products/",

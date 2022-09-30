@@ -12,7 +12,8 @@ export interface ProductVariationType {
     unit: string,
     qty: number,
     image: string,
-    status: string
+    productId:number,
+    status: boolean
 }
 
 interface ProductVariationInstance
@@ -31,5 +32,6 @@ export const ProductVariation = sequelize.define<ProductVariationInstance>("Prod
     unit: DataTypes.STRING,
     qty: DataTypes.INTEGER,
     image: DataTypes.STRING,
-    status: DataTypes.STRING
+    productId: DataTypes.INTEGER,
+    status: DataTypes.BOOLEAN
 });
