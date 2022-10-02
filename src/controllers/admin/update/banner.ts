@@ -1,7 +1,7 @@
 import {success, wrapRequestHandler} from "../../../helpers/response";
 import {RequestHandler} from "express";
 import {authMiddleware} from "../../../middlewares/authMiddleware";
-import {Banner} from "../../../models/banner";
+import {Banner} from "../../../models/banners";
 import {uploadImage, validate} from "../../../helpers";
 import {body} from "express-validator";
 import {updateRouter} from "../../../routes/updateRouter";
@@ -10,7 +10,7 @@ const handler: RequestHandler = async (req, res) => {
     const {id, image, index} = req.body;
     let photo;
 
-    if (image){
+    if (image) {
         photo = await uploadImage({
             image,
             directoryPath: "/uploads/banners",
