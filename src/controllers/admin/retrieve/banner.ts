@@ -2,7 +2,7 @@ import {retrieveRouter} from "../../../routes/retrieveRouter";
 import {authMiddleware} from "../../../middlewares/authMiddleware";
 import {success, wrapRequestHandler} from "../../../helpers/response";
 import {RequestHandler} from "express";
-import {Banner} from "../../../models/banner";
+import {Banner} from "../../../models/banners";
 import {pagination} from "../../../helpers";
 
 const handler: RequestHandler = async (req, res) => {
