@@ -2,7 +2,7 @@ import {createRouter} from "../../../routes/createRouter";
 import {success, wrapRequestHandler} from "../../../helpers/response";
 import {RequestHandler} from "express";
 import {authMiddleware} from "../../../middlewares/authMiddleware";
-import {BannerType, Banner} from "../../../models/banner";
+import {BannerType, Banner} from "../../../models/banners";
 import {uploadImage, validate} from "../../../helpers";
 import {body} from "express-validator";
 
