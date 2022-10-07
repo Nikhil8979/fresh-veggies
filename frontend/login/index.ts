@@ -1,9 +1,9 @@
-import * as React from "react";
 import ReactDom from "react-dom";
-import {router} from "./router";
-import {AppContainer} from "../common-component/AppContainer";
 import {AppComponent} from "./AppComponent";
+import * as React from "react";
+import {AppContainer} from "../common-component/AppContainer";
 import {store} from "./store";
+import {router} from "./router";
 
 ReactDom.render(React.createElement(AppContainer, {
     router,

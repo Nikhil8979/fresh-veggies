@@ -4,7 +4,7 @@ import {sequelize} from "../models";
 export interface CategoryType {
     id?: number,
     name: string,
-    image:string,
+    image:any,
     status:boolean
 }
 

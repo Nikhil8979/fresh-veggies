@@ -6,7 +6,7 @@ import {AlertDialog, ConfirmDialog, NotifySnackbar} from "react-material-crud";
 import {CrudRequest} from "@crud/core";
 import {Store} from "redux";
 import {Provider} from "react-redux";
-import {BrandingProvider} from "../common-component/BrandingProvider";
+import {BrandingProvider} from "./BrandingProvider";
 import {MuiPickersUtilsProvider} from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/moment";
 
