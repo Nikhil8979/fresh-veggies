@@ -1,0 +1,8 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200&family=Catamaran:wght@500&family=Cormorant:wght@600&family=Libre+Baskerville&family=Open+Sans:wght@400;500;700;800&family=Poppins:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+.login-input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #9a9999 !important;
+  font-weight: bold;
+  font-size: 13px!important;
+}

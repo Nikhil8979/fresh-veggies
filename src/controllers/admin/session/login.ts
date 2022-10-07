@@ -9,10 +9,10 @@ import {LOGIN_TYPE, JWT_SIGNING_KEY} from "../../../constant";
 import {sign} from "jsonwebtoken";
 import {body, check} from "express-validator";
 
-const handler:RequestHandler = async (req, res) => {
+const handler: RequestHandler = async (req, res) => {
     const {userName, password, session} = req.body;
 
-    const user:UserType = await User.findOne({
+    const user: UserType = await User.findOne({
         where: {
             [Op.or]: [
                 {mobile: userName},
@@ -43,7 +43,10 @@ const handler:RequestHandler = async (req, res) => {
         req.session["login_token"] = jwt;
     }
 
-    return res.json(success("Logged in successfully.", {token: jwt}));
+    return res.json(success("Logged in successfully.", {
+        ...token.toJSON(),
+        jwt,
+    }));
 };
 
 createRouter.post("/web/login", validate([

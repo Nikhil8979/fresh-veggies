@@ -18,6 +18,8 @@ import {Add, Search, Edit, List, Delete} from "@material-ui/icons";
 import {ReactStateDeclaration} from "@uirouter/react";
 import {Tr, Td} from "../common-component/StyledTableCell";
 import {CategoryDialog} from "./dialogs/CategoryDialog";
+import {useState} from "react";
+import {CategoryType} from "../../src/models/category";
 
 const useStyles = makeStyles(theme => ({
     tableRow: {"&$hover:hover": {backgroundColor: theme.palette.primary.main}},
@@ -26,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 
 export const Category = () => {
     const classes = useStyles({});
-
+    const [categoryParams, setCategoryParams] = useState<Partial<CategoryType>>();
     return <Grid className="p-4">
         <Grid container>
             <Grid item xs>
@@ -35,6 +37,7 @@ export const Category = () => {
             </Grid>
             <Grid item xs className="d-flex justify-content-end" alignItems="center" >
                 <Button
+                    onClick={() => setCategoryParams({})}
                     startIcon={<Add/>} color="primary" className="text-white" style={{fontSize: 13}} variant="contained" size="small"
                 >Add Categories</Button>
             </Grid>
@@ -118,7 +121,7 @@ export const Category = () => {
                 </TableContainer>
             </Grid>
         </Grid>
-        <CategoryDialog/>
+        <CategoryDialog open={!!categoryParams} onClose={() => setCategoryParams(null)}/>
     </Grid>;
 };
 

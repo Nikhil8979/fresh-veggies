@@ -6,6 +6,7 @@ import path from "path";
 import AssetsPlugin from "assets-webpack-plugin";
 
 export default ({app = "admin", mode = "development", context = "/"} = {}) => {
+    console.log(app, "--ap-");
     if (!app) throw "Please Provide an app name";
     const publicPath = context + "apps/" + app + "/";
     const src = path.resolve(__dirname, "frontend", app);
